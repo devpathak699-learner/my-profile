@@ -39,6 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const showCertBtn = document.getElementById('showCertBtn');
+    const certDetails = document.getElementById('certDetails');
+
+    if (showCertBtn) {
+        showCertBtn.addEventListener('click', () => {
+            if (certDetails.style.display === 'none') {
+                certDetails.style.display = 'block';
+                showCertBtn.textContent = 'Hide Certificates';
+            } else {
+                certDetails.style.display = 'none';
+                showCertBtn.textContent = 'Show Certificates';
+            }
+        });
+    }
+
     // GSAP Animations
     gsap.from('header', { duration: 1, y: -50, opacity: 0, ease: 'bounce' });
     gsap.from('.profile-img', { duration: 1.5, scale: 0.5, opacity: 0, ease: 'elastic' });
